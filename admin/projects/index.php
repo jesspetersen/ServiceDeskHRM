@@ -29,8 +29,9 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
 		<li class="active"><a id="tabClient" href="#tabPageClient"><?=t('Clients')?></a></li>
-		<li><a id="tabProject" href="#tabPageProject"><?=t('Projects')?></a></li>
-		<li><a id="tabEmployeeProject" href="#tabPageEmployeeProject"><?=t('Employee Projects')?></a></li>
+		<!--121017 JEP Hide project and employee project tabs-->
+		<!--<li><a id="tabProject" href="#tabPageProject"><?=t('Projects')?></a></li>
+		<li><a id="tabEmployeeProject" href="#tabPageEmployeeProject"><?=t('Employee Projects')?></a></li>-->
 	</ul>
 	 
 	<div class="tab-content">
@@ -42,7 +43,8 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 		
 			</div>
 		</div>
-		<div class="tab-pane" id="tabPageProject">
+		<!--121017 JEP Hide project and employee project tabs-->
+		<!--<div class="tab-pane" id="tabPageProject">
 			<div id="Project" class="reviewBlock" data-content="List" style="padding-left:5px;">
 		
 			</div>
@@ -57,7 +59,7 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 			<div id="EmployeeProjectForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
 		
 			</div>
-		</div>
+		</div>!-->
 	</div>
 
 </div>
