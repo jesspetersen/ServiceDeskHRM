@@ -29,8 +29,7 @@ Developer: Thilina Hasantha (thilina.hasantha[at]gmail.com / facebook.com/thilin
 function IceHRMBase() {
 	this.deleteParams = {};
 	this.createRemoteTable = false;
-	//121017 JEP Removed instanceid information
-	//this.instanceId = "None";
+	this.instanceId = "None";
 	this.ga = [];
 	this.showEdit = true;
 	this.showDelete = true;
@@ -111,10 +110,9 @@ IceHRMBase.method('getUser' , function() {
 	return this.user;
 });
 
-//121017 JEP Removed instanceid information
-/*IceHRMBase.method('setInstanceId' , function(id) {
+IceHRMBase.method('setInstanceId' , function(id) {
 	this.instanceId = id;
-});*/
+});
 
 IceHRMBase.method('setGoogleAnalytics' , function(ga) {
 	this.ga = ga;
@@ -188,8 +186,7 @@ IceHRMBase.method('showActionButtons' , function() {
 	return true;
 });
 
-//121017 JEP Removed instanceid information
-/*IceHRMBase.method('trackEvent' , function(action, label, value) {
+IceHRMBase.method('trackEvent' , function(action, label, value) {
 	try{
 		if(label == undefined || label == null){
 			this.ga.push(['_trackEvent', this.instanceId, action]);
@@ -203,7 +200,7 @@ IceHRMBase.method('showActionButtons' , function() {
 	}
 
 
-});*/
+});
 
 
 IceHRMBase.method('setCurrentProfile' , function(currentProfile) {
