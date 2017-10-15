@@ -106,9 +106,8 @@
 </div>
 <!-- Upload Modal -->
 
-<!--121017 JEP Removed instance key pop up -->
 <!-- Message Modal -->
-<!--<div class="modal fade" id="verifyModel" tabindex="-1" role="dialog" aria-labelledby="verifyModelLabel" aria-hidden="true">
+<div class="modal fade" id="verifyModel" tabindex="-1" role="dialog" aria-labelledby="verifyModelLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -146,7 +145,7 @@
 			</p>
 		</div>
 	</div>
-</div>-->
+</div>
 </div>
 <!-- Message Modal -->
 
