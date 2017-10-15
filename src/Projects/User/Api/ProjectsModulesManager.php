@@ -30,7 +30,8 @@ class ProjectsModulesManager extends AbstractModuleManager
 
     public function setupModuleClassDefinitions()
     {
-
+        //121017 JEP Add client model to module definitions
+        $this->addModelClass('Client');
         $this->addModelClass('EmployeeProject');
     }
 }

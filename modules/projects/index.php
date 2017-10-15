@@ -28,15 +28,31 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabEmployeeProject" href="#tabPageEmployeeProject"><?=t('My Projects')?></a></li>
+		<!--121017 JEP add client tab-->
+		<li class="active"><a id="tabClient" href="#tabPageClient"><?=t('Clients')?></a></li>
+		<!--121017 JEP remove project tab-->
+		<!--<li class="active"><a id="tabEmployeeProject" href="#tabPageEmployeeProject"><?=t('My Projects')?></a></li>-->
 	</ul>
 	 
-	<div class="tab-content">
+	<!--121017 JEP Remove employment tab data-->
+	<!--<div class="tab-content">
 		<div class="tab-pane active" id="tabPageEmployeeProject">
 			<div id="EmployeeProject" class="reviewBlock" data-content="List" style="padding-left:5px;">
 		
 			</div>
 			<div id="EmployeeProjectForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
+		
+			</div>
+		</div>
+	</div>-->
+
+	<!--121017 JEP Add client tab data-->
+	<div class="tab-content">
+		<div class="tab-pane active" id="tabPageClient">
+			<div id="Client" class="reviewBlock" data-content="List" style="padding-left:5px;">
+		
+			</div>
+			<div id="ClientForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
 		
 			</div>
 		</div>
@@ -46,7 +62,8 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 <script>
 var modJsList = new Array();
 
-modJsList['tabEmployeeProject'] = new EmployeeProjectAdapter('EmployeeProject','EmployeeProject');
+//121017 JEP Remove employeeproject permissions and functions
+/*modJsList['tabEmployeeProject'] = new EmployeeProjectAdapter('EmployeeProject','EmployeeProject');
 
 <?php if(isset($modulePermissions['perm']['Add Projects']) && $modulePermissions['perm']['Add Projects'] == "No"){?>
 modJsList['tabEmployeeProject'].setShowAddNew(false);
@@ -56,9 +73,27 @@ modJsList['tabEmployeeProject'].setShowDelete(false);
 <?php }?>
 <?php if(isset($modulePermissions['perm']['Edit Projects']) && $modulePermissions['perm']['Edit Projects'] == "No"){?>
 modJsList['tabEmployeeProject'].setShowEdit(false);
+<?php }?>*/
+
+//121017 JEP Add client permissions and functions
+modJsList['tabClient'] = new ClientAdapter('Client','Client');
+
+<?php if(isset($modulePermissions['perm']['Add Clients']) && $modulePermissions['perm']['Add Clients'] == "No"){?>
+modJsList['tabClient'].setShowAddNew(false);
 <?php }?>
 
-var modJs = modJsList['tabEmployeeProject'];
+<?php if(isset($modulePermissions['perm']['Delete Clients']) && $modulePermissions['perm']['Delete Clients'] == "No"){?>
+modJsList['tabClient'].setShowDelete(false);
+<?php }?>
+
+<?php if(isset($modulePermissions['perm']['Edit Clients']) && $modulePermissions['perm']['Edit Clients'] == "No"){?>
+modJsList['tabClient'].setShowSave(false);
+<?php }?>
+
+//121017 JEP Remove employee project tab data
+//var modJs = modJsList['tabEmployeeProject'];
+//121017 JEP Add client tab data
+var modJs = modJsList['tabClient'];
 
 </script>
 <?php include APP_BASE_PATH.'footer.php';?>      
