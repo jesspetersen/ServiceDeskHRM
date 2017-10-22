@@ -5,7 +5,8 @@
     "icon": "fa-list-alt",
     "user_levels": [
         "Admin",
-        "Manager"
+        "Manager",
+        "Employee"
     ],
     "dashboardPosition": 4,
     "permissions": {

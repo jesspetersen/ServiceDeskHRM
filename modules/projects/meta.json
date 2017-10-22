@@ -13,12 +13,18 @@
         "Manager": {
             "Add Projects": "Yes",
             "Edit Projects": "Yes",
-            "Delete Projects": "Yes"
+            "Delete Projects": "Yes",
+            "Add Clients": "Yes",
+            "Edit Clients": "Yes",
+            "Delete Clients": "No"
         },
         "Employee": {
             "Add Projects": "No",
             "Edit Projects": "No",
-            "Delete Projects": "No"
+            "Delete Projects": "No",
+            "Add Clients": "Yes",
+            "Edit Clients": "Yes",
+            "Delete Clients": "No"
         }
     },
     "model_namespace": "\\Projects\\Common\\Model",

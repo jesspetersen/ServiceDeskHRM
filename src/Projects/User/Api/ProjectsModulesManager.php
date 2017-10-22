@@ -17,6 +17,9 @@ class ProjectsModulesManager extends AbstractModuleManager
     {
         if (defined('MODULE_TYPE') && MODULE_TYPE != 'admin') {
             $this->addUserClass("EmployeeProject");
+            //221017 JEP Add client model to model definitions
+            $this->addUserClass("EmployeeClient");
+            $this->addUserClass("Client");
         }
     }
 
@@ -33,5 +36,7 @@ class ProjectsModulesManager extends AbstractModuleManager
         //121017 JEP Add client model to module definitions
         $this->addModelClass('Client');
         $this->addModelClass('EmployeeProject');
+        //221017 JEP Add client model to model definitions
+        $this->addUserClass("EmployeeClient");
     }
 }

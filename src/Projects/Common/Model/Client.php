@@ -25,6 +25,6 @@ class Client extends BaseModel
 
     public function getUserAccess()
     {
-        return array();
+        return array("get","element","save");
     }
 }
