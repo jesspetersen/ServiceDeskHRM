@@ -17,6 +17,14 @@
             "Add Clients": "Yes",
             "Edit Clients": "Yes",
             "Delete Clients": "No"
+        },
+        "Employee": {
+            "Add Projects": "Yes",
+            "Edit Projects": "Yes",
+            "Delete Projects": "No",
+            "Add Clients": "Yes",
+            "Edit Clients": "Yes",
+            "Delete Clients": "No"
         }
     },
     "model_namespace": "\\Projects\\Common\\Model",

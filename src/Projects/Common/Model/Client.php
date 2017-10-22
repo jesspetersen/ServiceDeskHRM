@@ -23,8 +23,13 @@ class Client extends BaseModel
         return array("get","element","save","delete");
     }
 
-    public function getUserAccess()
+    public function getEmployeeAccess()
     {
         return array("get","element","save");
+    }
+
+    public function getUserAccess()
+    {
+        return array("get","element");
     }
 }
