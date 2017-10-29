@@ -16,8 +16,8 @@
             "Delete Projects": "Yes"
         },
         "Employee": {
-            "Add Projects": "No",
-            "Edit Projects": "No",
+            "Add Projects": "Yes",
+            "Edit Projects": "Yes",
             "Delete Projects": "No"
         }
     },

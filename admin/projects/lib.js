@@ -82,7 +82,9 @@ ProjectAdapter.method('getDataMapping', function() {
 	return [
 	        "id",
 	        "name",
-	        "client"
+		"client",
+		"account",
+		"training"
 	];
 });
 
@@ -91,6 +93,8 @@ ProjectAdapter.method('getHeaders', function() {
 			{ "sTitle": "ID","bVisible":false },
 			{ "sTitle": "Name" },
 			{ "sTitle": "Client"},
+			{ "sTitle": "Has Account"},
+			{ "sTitle": "Has Training"}
 	];
 });
 
@@ -101,7 +105,9 @@ ProjectAdapter.method('getFormFields', function() {
 		        [ "id", {"label":"ID","type":"hidden"}],
 		        [ "name", {"label":"Name","type":"text"}],
 		        [ "client", {"label":"Client","type":"select2","allow-null":true,"remote-source":["Client","id","name"]}],
-		        [ "details",  {"label":"Details","type":"textarea","validation":"none"}],
+			[ "details",  {"label":"Details","type":"textarea","validation":"none"}],
+			[ "account", {"label":"Has Account","type":"select","source":[["true","True"],["false","False"]]}],
+			[ "training", {"label":"Has Training","type":"select","source":[["true","True"],["false","False"]]}],
 		        [ "status", {"label":"Status","type":"select","source":[["Active","Active"],["On Hold","On Hold"],["Completed","Completed"],["Dropped","Dropped"]]}]
 		];
 	}else{
@@ -109,7 +115,9 @@ ProjectAdapter.method('getFormFields', function() {
 		        [ "id", {"label":"ID","type":"hidden"}],
 		        [ "name", {"label":"Name","type":"placeholder"}],
 		        [ "client", {"label":"Client","type":"placeholder","allow-null":true,"remote-source":["Client","id","name"]}],
-		        [ "details",  {"label":"Details","type":"placeholder","validation":"none"}],
+			[ "details",  {"label":"Details","type":"placeholder","validation":"none"}],
+			[ "account", {"label":"Has Account","type":"select","source":[["true","True"],["false","False"]]}],
+			[ "training", {"label":"Has Training","type":"select","source":[["true","True"],["false","False"]]}],
 			[ "status", {"label":"Status","type":"select","source":[["Active","Active"],["On Hold","On Hold"],["Completed","Completed"],["Dropped","Dropped"]]}]
 		];
 	}
@@ -138,7 +146,9 @@ EmployeeProjectAdapter.method('getDataMapping', function() {
 	return [
 	        "id",
 	        "employee",
-	        "project"
+		"project",
+		"account",
+		"training"
 	];
 });
 
@@ -146,7 +156,9 @@ EmployeeProjectAdapter.method('getHeaders', function() {
 	return [
 			{ "sTitle": "ID" ,"bVisible":false},
 			{ "sTitle": "Employee" },
-			{ "sTitle": "Project" }
+			{ "sTitle": "Project" },
+			{ "sTitle": "account"},
+			{ "sTitle": "training"}
 	];
 });
 
@@ -155,7 +167,9 @@ EmployeeProjectAdapter.method('getFormFields', function() {
 	        [ "id", {"label":"ID","type":"hidden"}],
 	        [ "employee", {"label":"Employee","type":"select2","remote-source":["Employee","id","first_name+last_name"]}],
 	        [ "project", {"label":"Project","type":"select2","remote-source":["Project","id","name"]}],
-	        [ "details", {"label":"Details","type":"textarea","validation":"none"}]
+		[ "details", {"label":"Details","type":"textarea","validation":"none"}],
+		[ "account", {"label":"Has Account","type":"select","source":[["true","True"],["false","False"]]}],
+		[ "training", {"label":"Has Training","type":"select","source":[["true","True"],["false","False"]]}]
 	];
 });
 
