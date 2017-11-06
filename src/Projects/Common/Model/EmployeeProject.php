@@ -50,4 +50,38 @@ class EmployeeProject extends BaseModel
         }
         return new IceResponse(IceResponse::SUCCESS, $obj);
     }
+
+    public function addEmployeeClientRows() {
+        $projectClient = new \Projects\Common\Model\Client();
+        $projectInterface = new \Projects\Common\Model\EmployeeProject();
+        $projectEmployee = new \Employees\Common\Model\Employee();
+        
+        foreach ($projectClient->find('id like ? order by id', array('%')) as $client) {
+            $employeeClientArray = $projectInterface->find("client like ? order by id", array('' + $client->id));
+            $employeesToAddArray = $projectEmployee->find('id like ? order by id', array('%'));
+            foreach ($projectEmployee->find('id like ? order by id', array('%')) as $employee) {
+                foreach ($employeeClientArray as $row) {
+                    if ($row->employee == $employee->id) {
+                        $rowToRemove = array_search($row, $employeeClientArray);
+                        unset($employeeClientArray[$rowToRemove]);
+                        $employeeToRemove = array_search($employee, $employeesToAddArray);
+                        unset($employeesToAddArray[$employeeToRemove]);
+                    }
+                }
+            }
+            foreach ($employeesToAddArray as $employee) {
+                $projectAdapter = new \Projects\Common\Model\EmployeeProject();
+                $projectAdapter->id = null;
+                $projectAdapter->employee = $employee->id;
+                $projectAdapter->client = $client->id;
+                $projectAdapter->account = 'false';
+                $projectAdapter->training = 'false';
+                $projectAdapter->date_start = null;
+                $projectAdapter->date_end = null;
+                $projectAdapter->status = 'Current';
+                $projectAdapter->details = null;
+                $saveStatus = $projectAdapter->save();
+            }
+        }
+    }
 }

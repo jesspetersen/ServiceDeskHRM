@@ -25,6 +25,9 @@ $moduleName = 'projects';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
+
+$projectClient = new \Projects\Common\Model\EmployeeProject();
+$projectClient->addEmployeeClientRows();
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">

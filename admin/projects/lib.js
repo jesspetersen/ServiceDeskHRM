@@ -146,7 +146,7 @@ EmployeeProjectAdapter.method('getDataMapping', function() {
 	return [
 	        "id",
 	        "employee",
-		"project",
+		"client",
 		"account",
 		"training"
 	];
@@ -156,9 +156,9 @@ EmployeeProjectAdapter.method('getHeaders', function() {
 	return [
 			{ "sTitle": "ID" ,"bVisible":false},
 			{ "sTitle": "Employee" },
-			{ "sTitle": "Project" },
-			{ "sTitle": "account"},
-			{ "sTitle": "training"}
+			{ "sTitle": "Client" },
+			{ "sTitle": "Has Account"},
+			{ "sTitle": "Has Training"}
 	];
 });
 
@@ -166,7 +166,7 @@ EmployeeProjectAdapter.method('getFormFields', function() {
 	return [
 	        [ "id", {"label":"ID","type":"hidden"}],
 	        [ "employee", {"label":"Employee","type":"select2","remote-source":["Employee","id","first_name+last_name"]}],
-	        [ "project", {"label":"Project","type":"select2","remote-source":["Project","id","name"]}],
+	        [ "client", {"label":"Client","type":"select2","remote-source":["Client","id","name"]}],
 		[ "details", {"label":"Details","type":"textarea","validation":"none"}],
 		[ "account", {"label":"Has Account","type":"select","source":[["true","True"],["false","False"]]}],
 		[ "training", {"label":"Has Training","type":"select","source":[["true","True"],["false","False"]]}]
