@@ -49,7 +49,7 @@ EmployeeProjectAdapter.method('getHeaders', function() {
 EmployeeProjectAdapter.method('getFormFields', function() {
 	return [
 	        [ "id", {"label":"ID","type":"hidden"}],
-	        [ "client", {"label":"Client","type":"select2","remote-source":["Client","id","name"]}],
+			[ "client", {"label":"Client","type":"placeholder","validation":"","remote-source":["Client","id","name"]}],
 			[ "details", {"label":"Details","type":"textarea","validation":"none"}],
 			[ "account", {"label":"Has Account","type":"select","source":[["true","True"],["false","False"]]}],
 			[ "training", {"label":"Has Training","type":"select","source":[["true","True"],["false","False"]]}]
