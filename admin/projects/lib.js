@@ -42,22 +42,16 @@ ClientAdapter.method('getFormFields', function() {
 		        [ "details",  {"label":"Details","type":"textarea","validation":"none"}],
 		        [ "address",  {"label":"Address","type":"textarea","validation":"none"}],
 		        [ "contact_number", {"label":"Contact Number","type":"text","validation":"none"}],
-		        [ "contact_email", {"label":"Contact Email","type":"text","validation":"none"}],
-		        [ "company_url", {"label":"Company Url","type":"text","validation":"none"}],
-		        [ "status", {"label":"Status","type":"select","source":[["Active","Active"],["Inactive","Inactive"]]}],
-		        [ "first_contact_date", {"label":"First Contact Date","type":"date","validation":"none"}]
+		        [ "status", {"label":"Status","type":"select","source":[["Active","Active"],["Inactive","Inactive"]]}]
 		];
 	}else{
 		return [
 		        [ "id", {"label":"ID","type":"hidden"}],
-		        [ "name", {"label":"Name","type":"placeholder"}],
-		        [ "details",  {"label":"Details","type":"placeholder","validation":"none"}],
-		        [ "address",  {"label":"Address","type":"placeholder","validation":"none"}],
-		        [ "contact_number", {"label":"Contact Number","type":"placeholder","validation":"none"}],
-		        [ "contact_email", {"label":"Contact Email","type":"placeholder","validation":"none"}],
-		        [ "company_url", {"label":"Company Url","type":"placeholder","validation":"none"}],
-		        [ "status", {"label":"Status","type":"placeholder","source":[["Active","Active"],["Inactive","Inactive"]]}],
-		        [ "first_contact_date", {"label":"First Contact Date","type":"placeholder","validation":"none"}]
+		        [ "name", {"label":"Name","type":"text"}],
+		        [ "details",  {"label":"Details","type":"textarea","validation":"none"}],
+		        [ "address",  {"label":"Address","type":"textarea","validation":"none"}],
+		        [ "contact_number", {"label":"Contact Number","type":"text","validation":"none"}],
+		        [ "status", {"label":"Status","type":"select","source":[["Active","Active"],["Inactive","Inactive"]]}]
 		];
 	}
 });
