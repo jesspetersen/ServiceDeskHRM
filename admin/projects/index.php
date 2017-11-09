@@ -64,7 +64,7 @@ modJsList['tabClient'] = new ClientAdapter('Client','Client');
 modJsList['tabClient'].setShowAddNew(false);
 <?php }?>
 
-modJsList['tabClient'].setShowDelete(false);
+modJsList['tabClient'].setShowDelete(true);
 
 <?php if(isset($modulePermissions['perm']['Edit Clients']) && $modulePermissions['perm']['Edit Clients'] == "No"){?>
 modJsList['tabClient'].setShowSave(false);
