@@ -144,7 +144,7 @@ $logoFileUrl = \Classes\UIManager::getInstance()->getCompanyLogoUrl();
 	<style type="text/css">
 		/* Override some defaults */
 		html, body {
-			background-color: #829AA8;
+			background-color: #15A02E;
 		}
 		body {
 			padding-top: 40px;
@@ -339,9 +339,7 @@ $logoFileUrl = \Classes\UIManager::getInstance()->getCompanyLogoUrl();
 							<?php } ?>
 							<button class="btn" style="margin-top: 5px;" type="button" onclick="submitLogin();return false;">Sign in&nbsp;&nbsp;<span class="icon-arrow-right"></span></button>
 						</fieldset>
-						<div class="clearfix">
-							<a href="" onclick="showForgotPassword();return false;" style="float:left;margin-top: 10px;">Forgot password</a>
-						</div>
+
 					</form>
 					<form id="requestPasswordChangeForm" style="display:none;" action="">
 						<fieldset>

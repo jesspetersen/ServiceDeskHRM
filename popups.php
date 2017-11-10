@@ -106,6 +106,7 @@
 </div>
 <!-- Upload Modal -->
 
+<!--161017 JEP Re-add isntance id pop-up to fix missing data -->
 <!-- Message Modal -->
 <div class="modal fade" id="verifyModel" tabindex="-1" role="dialog" aria-labelledby="verifyModelLabel" aria-hidden="true">
 	<div class="modal-dialog">

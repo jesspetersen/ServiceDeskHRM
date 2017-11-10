@@ -328,7 +328,7 @@ include('configureUIManager.php');
                 <?=\Classes\LanguageManager::tran($meta['label'])?>
                 <small>
                     <?=\Classes\LanguageManager::tran($meta['menu'])?>&nbsp;&nbsp;
-                    <a href="#" class="helpLink" target="_blank" style="display:none;color:#fff;"><i class="glyphicon glyphicon-question-sign"></i></a>
+                    <a href="#" class="helpLink" target="_blank" style="display:none;color:#fff;"></i></a>
                 </small>
             </h1>
         </section>
