@@ -25,10 +25,13 @@ $moduleName = 'projects';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
+
+$projectClient = new \Projects\Common\Model\EmployeeProject();
+$projectClient->addEmployeeClientRows();
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabEmployeeProject" href="#tabPageEmployeeProject"><?=t('My Projects')?></a></li>
+		<li class="active"><a id="tabEmployeeProject" href="#tabPageEmployeeProject"><?=t('My Client Accounts')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">
@@ -54,9 +57,7 @@ modJsList['tabEmployeeProject'].setShowAddNew(false);
 <?php if(isset($modulePermissions['perm']['Delete Projects']) && $modulePermissions['perm']['Delete Projects'] == "No"){?>
 modJsList['tabEmployeeProject'].setShowDelete(false);
 <?php }?>
-<?php if(isset($modulePermissions['perm']['Edit Projects']) && $modulePermissions['perm']['Edit Projects'] == "No"){?>
-modJsList['tabEmployeeProject'].setShowEdit(false);
-<?php }?>
+modJsList['tabEmployeeProject'].setShowEdit(true);
 
 var modJs = modJsList['tabEmployeeProject'];
 

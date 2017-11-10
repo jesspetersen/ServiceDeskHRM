@@ -25,11 +25,13 @@ $moduleName = 'projects';
 define('MODULE_PATH',dirname(__FILE__));
 include APP_BASE_PATH.'header.php';
 include APP_BASE_PATH.'modulejslibs.inc.php';
+
+$projectClient = new \Projects\Common\Model\EmployeeProject();
+$projectClient->addEmployeeClientRows();
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
 		<li class="active"><a id="tabClient" href="#tabPageClient"><?=t('Clients')?></a></li>
-		<li><a id="tabProject" href="#tabPageProject"><?=t('Projects')?></a></li>
 		<li><a id="tabEmployeeProject" href="#tabPageEmployeeProject"><?=t('Employee Projects')?></a></li>
 	</ul>
 	 
@@ -39,14 +41,6 @@ include APP_BASE_PATH.'modulejslibs.inc.php';
 		
 			</div>
 			<div id="ClientForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
-		
-			</div>
-		</div>
-		<div class="tab-pane" id="tabPageProject">
-			<div id="Project" class="reviewBlock" data-content="List" style="padding-left:5px;">
-		
-			</div>
-			<div id="ProjectForm" class="reviewBlock" data-content="Form" style="padding-left:5px;display:none;">
 		
 			</div>
 		</div>
@@ -70,38 +64,17 @@ modJsList['tabClient'] = new ClientAdapter('Client','Client');
 modJsList['tabClient'].setShowAddNew(false);
 <?php }?>
 
-<?php if(isset($modulePermissions['perm']['Delete Clients']) && $modulePermissions['perm']['Delete Clients'] == "No"){?>
-modJsList['tabClient'].setShowDelete(false);
-<?php }?>
+modJsList['tabClient'].setShowDelete(true);
 
 <?php if(isset($modulePermissions['perm']['Edit Clients']) && $modulePermissions['perm']['Edit Clients'] == "No"){?>
 modJsList['tabClient'].setShowSave(false);
 <?php }?>
 
-modJsList['tabProject'] = new ProjectAdapter('Project','Project');
-
-<?php if(isset($modulePermissions['perm']['Add Projects']) && $modulePermissions['perm']['Add Projects'] == "No"){?>
-modJsList['tabProject'].setShowAddNew(false);
-<?php }?>
-
-<?php if(isset($modulePermissions['perm']['Delete Projects']) && $modulePermissions['perm']['Delete Projects'] == "No"){?>
-modJsList['tabProject'].setShowDelete(false);
-<?php }?>
-
-<?php if(isset($modulePermissions['perm']['Edit Projects']) && $modulePermissions['perm']['Edit Projects'] == "No"){?>
-modJsList['tabProject'].setShowSave(false);
-<?php }?>
-
-
 modJsList['tabEmployeeProject'] = new EmployeeProjectAdapter('EmployeeProject','EmployeeProject');
 modJsList['tabEmployeeProject'].setRemoteTable(true);
 
-<?php if(isset($modulePermissions['perm']['Add Projects']) && $modulePermissions['perm']['Add Projects'] == "No"){?>
 modJsList['tabEmployeeProject'].setShowAddNew(false);
-<?php }?>
-<?php if(isset($modulePermissions['perm']['Delete Projects']) && $modulePermissions['perm']['Delete Projects'] == "No"){?>
 modJsList['tabEmployeeProject'].setShowDelete(false);
-<?php }?>
 <?php if(isset($modulePermissions['perm']['Edit Projects']) && $modulePermissions['perm']['Edit Projects'] == "No"){?>
 modJsList['tabEmployeeProject'].setShowEdit(false);
 <?php }?>
