@@ -76,9 +76,6 @@ class EmployeeProject extends BaseModel
                 $projectAdapter->client = $client->id;
                 $projectAdapter->account = 'false';
                 $projectAdapter->training = 'false';
-                $projectAdapter->date_start = null;
-                $projectAdapter->date_end = null;
-                $projectAdapter->status = 'Current';
                 $projectAdapter->details = null;
                 $saveStatus = $projectAdapter->save();
             }
