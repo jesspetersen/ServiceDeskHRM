@@ -31,7 +31,7 @@ $projectClient->addEmployeeClientRows();
 ?><div class="span9">
 			  
 	<ul class="nav nav-tabs" id="modTab" style="margin-bottom:0px;margin-left:5px;border-bottom: none;">
-		<li class="active"><a id="tabEmployeeProject" href="#tabPageEmployeeProject"><?=t('My Projects')?></a></li>
+		<li class="active"><a id="tabEmployeeProject" href="#tabPageEmployeeProject"><?=t('My Client Accounts')?></a></li>
 	</ul>
 	 
 	<div class="tab-content">
