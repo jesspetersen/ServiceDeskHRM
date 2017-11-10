@@ -96,13 +96,29 @@ EmployeeAdapter.method('getHeaders', function() {
 			{ "sTitle": "Department"},
 			{ "sTitle": "Gender"},
 			{ "sTitle": "Supervisor"}
+
 	];
 });
 
 EmployeeAdapter.method('getFormFields', function() {
 	var fields, newFields = [];
-	var employee_id, ssn_num, employment_status, job_title, pay_grade, joined_date, department, work_email, country;
-
+	var employee_id, ssn_num, employment_status, job_title, pay_grade, joined_date, department, work_email, country, img_status, img_exp, visa_type;
+	
+	if(this.checkPermission("Immigration Expiry") == "Yes"){
+		img_exp = [ "img_exp", {"label":"Immigration Expiry","type":"text","validation":"none"}];
+	}else{
+		img_exp = [ "img_exp", {"label":"Immigration Expiry","type":"placeholder","validation":"none"}];
+	}
+		if(this.checkPermission("Visa Status") == "Yes"){
+		visa_type = [ "visa_type", {"label":"Edit Visa Status","type":"text","validation":"none"}];
+	}else{
+		visa_type = [ "visa_type", {"label":"Visa Status","type":"placeholder","validation":"none"}]
+	}
+	if(this.checkPermission("Immigration Status") == "Yes"){
+		img_status = [ "img_status", {"label":"Edit Immigration Status","type":"text","validation":"none"}];
+	}else{
+		img_status = [ "img_status", {"label":"Immigration Status","type":"placeholder","validation":"none"}];
+	}
 	if(this.checkPermission("Edit Employee Number") == "Yes"){
 		employee_id = [ "employee_id", {"label":"Employee Number","type":"text","validation":""}];
 	}else{
@@ -114,6 +130,7 @@ EmployeeAdapter.method('getFormFields', function() {
 	}else{
 		ssn_num = [ "ssn_num", {"label":"EPF/CPF/SS No","type":"placeholder","validation":"none"}];
 	}
+	
 
 	if(this.checkPermission("Edit Employment Status") == "Yes"){
 		employment_status = [ "employment_status", {"label":"Employment Status","type":"select2","remote-source":["EmploymentStatus","id","name"]}];
@@ -165,21 +182,24 @@ EmployeeAdapter.method('getFormFields', function() {
 	        [ "last_name", {"label":"Last Name","type":"text","validation":""}],
 	        [ "nationality", {"label":"Nationality","type":"select2","remote-source":["Nationality","id","name"]}],
 	        [ "birthday", {"label":"Date of Birth","type":"date","validation":""}],
-	        [ "gender", {"label":"Gender","type":"select","source":[["Male","Male"],["Female","Female"]]}],
-	        [ "marital_status", {"label":"Marital Status","type":"select","source":[["Married","Married"],["Single","Single"],["Divorced","Divorced"],["Widowed","Widowed"],["Other","Other"]]}],
+	        [ "gender", {"label":"Gender","type":"select","source":[["Male","Male"],["Female","Female"],["Other","Other"]]}],
+	        // [ "marital_status", {"label":"Marital Status","type":"select","source":[["Married","Married"],["Single","Single"],["Divorced","Divorced"],["Widowed","Widowed"],["Other","Other"]]}],
 	        ssn_num,
 	        [ "nic_num", {"label":"NIC","type":"text","validation":"none"}],
 	        [ "other_id", {"label":"Other ID","type":"text","validation":"none"}],
 	        [ "driving_license", {"label":"Driving License No","type":"text","validation":"none"}],
 	        employment_status,
+	        [ "img_status", {"label":"Immigration Status","type":"select","source":[["New Zealand Citizen by Birth","New Zealand Citizen by Birth"],["New Zealand Citizen - Granted","New Zealand Citizen - Granted"],["Residence class visa","Residence class visa"],["Australian citizens","Australian citizens"],["Other","Other"]]}],			
 	        job_title,
-	        pay_grade,
+			img_exp,
+	        // pay_grade,
 	        [ "work_station_id", {"label":"Work Station Id","type":"text","validation":"none"}],
 	        [ "address1", {"label":"Address Line 1","type":"text","validation":"none"}],
 	        [ "address2", {"label":"Address Line 2","type":"text","validation":"none"}],
 	        [ "city", {"label":"City","type":"text","validation":"none"}],
 	        country,
-	        [ "province", {"label":"Province","type":"select2","allow-null":true,"remote-source":["Province","id","name"]}],
+			[ "visa_type", {"label":"Immigration Status","type":"select","source":[["Student Visa","Student Visa"],["Open Search Visa","Open Search Visa"],["Work Visa","Work Visa"],["Working Holiday Visa","Working Holiday Visa"],["Other","Other"]]}],
+	        // [ "province", {"label":"Province","type":"select2","allow-null":true,"remote-source":["Province","id","name"]}],
 	        [ "postal_code", {"label":"Postal/Zip Code","type":"text","validation":"none"}],
 	        [ "home_phone", {"label":"Home Phone","type":"text","validation":"none"}],
 	        [ "mobile_phone", {"label":"Mobile Phone","type":"text","validation":"none"}],
