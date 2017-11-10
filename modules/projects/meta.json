@@ -1,6 +1,6 @@
 {
     "label": "Client Accounts",
-    "menu": "Time Management",
+    "menu": "Personal Information",
     "order": "1",
     "icon": "fa-pencil-square",
     "user_levels": [
